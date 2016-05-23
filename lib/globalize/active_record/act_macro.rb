@@ -68,7 +68,7 @@ module Globalize
         include InstanceMethods
         extend  ClassMethods, Migration
 
-        establish_connection = options[:connection]
+        translation_class.establish_connection = options[:connection]
         translation_class.table_name = options[:table_name]
 
         has_many :translations, :class_name  => translation_class.name,
